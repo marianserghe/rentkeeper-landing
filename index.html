@@ -430,13 +430,23 @@
             </div>
             <div class="app-preview">
                 <div class="phone-mockup">
-                    <div style="width: 280px; height: 600px; background: linear-gradient(180deg, #1a1a1c 0%, #0d0d0e 100%); border-radius: 40px; display: flex; flex-direction: column; align-items: center; justify-content: center; margin: 0 auto;">
-                        <img src="logo.png" alt="RentKeeper" style="width: 80px; height: 80px; border-radius: 16px; margin-bottom: 20px;">
-                        <div style="font-size: 1.5rem; font-family: 'Bebas Neue', sans-serif; letter-spacing: 0.05em; color: #fff;">RentKeeper</div>
-                        <div style="color: #9ca3af; font-size: 0.875rem; margin-top: 8px;">Your properties, organized</div>
+                    <div style="width: 280px; height: 580px; position: relative; border-radius: 44px; overflow: hidden; margin: 0 auto; box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);">
+                        <img src="phone-screenshot.jpg" alt="RentKeeper app" style="width: 100%; height: 100%; object-fit: cover;">
+                        <!-- Dynamic Island -->
+                        <div style="position: absolute; top: 12px; left: 50%; transform: translateX(-50%); width: 110px; height: 34px; background: #000; border-radius: 17px;"></div>
                     </div>
                 </div>
             </div>
+
+        <style>
+        .phone-mockup {
+            animation: float 6s ease-in-out infinite;
+        }
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+        </style>
         </div>
     </section>
 
