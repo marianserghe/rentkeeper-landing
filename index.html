@@ -95,6 +95,77 @@
             color: var(--primary);
         }
 
+        /* Mobile menu */
+        .hamburger {
+            display: none;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 8px;
+            color: var(--text-primary);
+        }
+
+        .hamburger ion-icon {
+            font-size: 1.75rem;
+        }
+
+        .mobile-menu {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: var(--bg-dark);
+            z-index: 100;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 32px;
+        }
+
+        .mobile-menu.active {
+            display: flex;
+        }
+
+        .mobile-menu a {
+            color: var(--text-primary);
+            text-decoration: none;
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 1.5rem;
+            letter-spacing: 0.05em;
+            transition: color 0.2s;
+        }
+
+        .mobile-menu a:hover {
+            color: var(--primary);
+        }
+
+        .mobile-menu .close-btn {
+            position: absolute;
+            top: 20px;
+            right: 24px;
+            background: none;
+            border: none;
+            color: var(--text-primary);
+            cursor: pointer;
+            padding: 8px;
+        }
+
+        .mobile-menu .close-btn ion-icon {
+            font-size: 2rem;
+        }
+
+        @media (max-width: 640px) {
+            .nav-links {
+                display: none;
+            }
+
+            .hamburger {
+                display: block;
+            }
+        }
+
         /* Hero */
         .hero {
             padding: 60px 0 40px;
@@ -411,9 +482,28 @@
                     <a href="#how-it-works">How It Works</a>
                     <a href="mailto:support@rentkeeper.co">Support</a>
                 </div>
+                <button class="hamburger" onclick="toggleMenu()" aria-label="Menu">
+                    <ion-icon name="menu-outline"></ion-icon>
+                </button>
             </div>
         </div>
     </nav>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <button class="close-btn" onclick="toggleMenu()" aria-label="Close menu">
+            <ion-icon name="close-outline"></ion-icon>
+        </button>
+        <a href="#features" onclick="toggleMenu()">Features</a>
+        <a href="#how-it-works" onclick="toggleMenu()">How It Works</a>
+        <a href="mailto:support@rentkeeper.co" onclick="toggleMenu()">Support</a>
+    </div>
+
+    <script>
+        function toggleMenu() {
+            document.getElementById('mobileMenu').classList.toggle('active');
+        }
+    </script>
 
     <!-- Hero -->
     <section class="hero">
